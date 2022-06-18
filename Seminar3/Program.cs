@@ -46,8 +46,9 @@ void FindDiap(int quart)
 
 FindDiap(num);
 */
-
+/*
 double FindLenght(double xA, double yA, double xB, double yB )
 {
    return Math.Sqrt((xB-xA) * (xB-xA) + Math.Pow((yB - yA),2));
 }
+*/
