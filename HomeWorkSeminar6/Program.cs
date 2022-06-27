@@ -27,4 +27,34 @@ InputNumbers(m);
 Console.WriteLine($"Введено чисел больше 0: {Comparison(numbers)} ");
 */
 
+/*Задача45
+int[] arrayCopy(int[] array)
+{
+    int[] copyofArray = new int[array.Length];
 
+    for(int i = 0; i < array.Length; i++)
+    {
+        copyofArray[i] = array[i];
+    }
+
+    return copyofArray;
+}
+
+void printArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + "  ");
+    }
+
+    Console.WriteLine();
+}
+int[] myArray = {17, -3, 1, 8, 0, -12};
+Console.WriteLine("Present array: ");
+printArray(myArray);
+
+int[] newArray = arrayCopy(myArray);
+Console.WriteLine();
+Console.WriteLine("Copy of the array: ");
+printArray(newArray);
+*/
