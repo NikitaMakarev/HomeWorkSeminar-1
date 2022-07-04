@@ -116,3 +116,64 @@ PrintMatrix(matrix1);
 SortDescendingArray(matrix1);
 PrintMatrix(matrix1);
 */
+
+
+
+void PrintMatrix(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine(" ");
+}
+
+int[,] FillSpiralArray(int[,] array)
+{
+    if (array.GetLength(0) == array.GetLength(1))
+    {
+        int m = 1;
+        int n = 0;
+        FillSpiralBorders(array, ref n, ref m);
+        return array;
+    }
+    else
+    {
+        Console.WriteLine("Cannot fill non-square array.");
+        return array;
+    }
+}
+
+int[,] FillSpiralBorders(int[,] borderArray, ref int a, ref int b)
+{
+    for (int i = a; i < borderArray.GetLength(1) - a; i++)
+    {
+        borderArray[a, i] = b;
+        b++;
+    }
+    for (int i = 1 + a; i < borderArray.GetLength(0) - a; i++)
+    {
+        borderArray[i, borderArray.GetLength(1) - 1 - a] = b;
+        b++;
+    }
+    for (int i = borderArray.GetLength(1) - 2 - a; i > a; i--)
+    {
+        borderArray[borderArray.GetLength(0) - 1 - a, i] = b;
+        b++;
+    }
+    for (int i = borderArray.GetLength(0) - 1 - a; i > a; i--)
+    {
+        borderArray[i, a] = b;
+        b++;
+    }
+    a++;
+    if (borderArray.GetLength(0) - a * 2 > 0) return FillSpiralBorders(borderArray, ref a, ref b);
+    else return borderArray;
+}
+
+int[,] spiralMatrix = new int[4, 4];
+PrintMatrix(FillSpiralArray(spiralMatrix));
