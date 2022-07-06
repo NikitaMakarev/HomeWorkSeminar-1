@@ -118,7 +118,7 @@ PrintMatrix(matrix1);
 */
 
 
-
+/*
 void PrintMatrix(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -177,3 +177,62 @@ int[,] FillSpiralBorders(int[,] borderArray, ref int a, ref int b)
 
 int[,] spiralMatrix = new int[4, 4];
 PrintMatrix(FillSpiralArray(spiralMatrix));
+*/
+
+/*Задача62
+int [,] CreateRandomTwoDemArray(int a, int b, int min, int max)
+{
+    int[,] newMatrix = new int[a, b];
+
+    for(int i = 0; i < a; i++)
+    {
+        for (int j = 0; j < b; j++)
+        {
+            newMatrix[i,j] = new Random().Next(min, max + 1);
+
+        }
+
+    }
+
+    return newMatrix;
+}
+
+void PrintArray (int [,] array)
+{
+     for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write (array[i, j] + " ");
+
+        }
+
+        Console.WriteLine ();
+    }    
+
+}
+
+int[,] FillSpiralBorders()
+{
+    int side = 4;
+    int SideElement = 1;
+    int[,] result = new int[side, side];
+    int num = 1;
+    for (int c = 0; c < side - SideElement  * 2; c++)
+    {
+        for (int j = c; j < side - SideElement  - c; j++, num++)
+            result[c,j] = num;
+
+        for (int i = c; i < side - SideElement  - c; i++, num++)
+            result[i,side - SideElement  - c] = num;
+        for (int j = side - SideElement  - c; j >= c; j--, num++)
+            result[side - SideElement  - c,j] = num;
+        for (int i = side - SideElement  * 2 - c; i > c; i--, num++)
+            result[i,c] = num;
+    }
+    return result;
+}
+
+int[,] myArray =FillSpiralBorders();
+PrintArray(myArray);
+*/
