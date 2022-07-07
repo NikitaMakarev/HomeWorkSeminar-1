@@ -17,3 +17,17 @@ int n = Convert.ToInt32(Console.ReadLine());
 Sum(m , n);
 */
 
+/*
+int Sum(int a)
+{
+    if(a >= 0 && a <= 10)
+    
+       return 1;
+       else
+       return a + Sum(a / 10);
+    
+}
+Console.WriteLine("Input integer number: ");
+int b = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(Sum(b));
+*/
