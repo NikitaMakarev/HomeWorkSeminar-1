@@ -1,33 +1,35 @@
-﻿/*
-int Sum(int m, int n)
+﻿/*Задача66
+void ShowNums(int m, int n, int sum)
 {
-    if(m != 1)
-      (m * Sum(n + 1, m)) / 2;
-
-    Console.Write(m + " ");
+    if (m > n) 
+    {
+        Console.WriteLine($"Сумма натуральных элементов в промежутке от M до N: {sum}"); 
+        return;
+    }
+    sum += m++;
+    ShowNums(m, n, sum);
 }
 
-Console.WriteLine("Input integer positive number: ");
+Console.WriteLine("Input integer positive number1: ");
 int m = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Input integer positive number: ");
+Console.WriteLine("Input integer positive number2: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-
-Sum(m , n);
+ShowNums(m, n, 0);
 */
 
-/*
-int Sum(int a)
+/*Задача67
+int Number(int a)
 {
     if(a >= 0 && a <= 10)
     
        return 1;
        else
-       return a + Sum(a / 10);
+       return 1 + Number(a / 10);
     
 }
 Console.WriteLine("Input integer number: ");
 int b = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(Sum(b));
+Console.WriteLine(Number(b));
 */
